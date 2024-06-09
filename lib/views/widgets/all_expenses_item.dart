@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../models/AllExpensesItem_model.dart';
+import '../../utils/app_style.dart';
 import 'all_axpenses_item_header.dart';
 
 class AllExpensesItem extends StatelessWidget {
@@ -18,10 +19,26 @@ class AllExpensesItem extends StatelessWidget {
         ),
       ),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           AllExpensesItemHeader(
             image: itemModel.image,
-          )
+          ),
+          const SizedBox(height: 34),
+          Text(
+            itemModel.title,
+            style: AppStyles.styleSemiBold16(context),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            itemModel.date,
+            style: AppStyles.styleRegular14(context),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            itemModel.price,
+            style: AppStyles.styleSemiBold24(context),
+          ),
         ],
       ),
     );
