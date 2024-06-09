@@ -20,6 +20,7 @@ class AllExpensesItem extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
         children: [
           AllExpensesItemHeader(
             image: itemModel.image,
