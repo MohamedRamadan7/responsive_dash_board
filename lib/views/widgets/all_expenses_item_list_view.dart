@@ -4,9 +4,15 @@ import 'package:responsive_dash_board/views/widgets/all_expenses_item.dart';
 
 import '../../models/AllExpensesItem_model.dart';
 
-class AllExpensesItemListView extends StatelessWidget {
+class AllExpensesItemListView extends StatefulWidget {
   const AllExpensesItemListView({super.key});
-  static const List<AllExpensesItemModel> items = [
+  @override
+  State<AllExpensesItemListView> createState() =>
+      _AllExpensesItemListViewState();
+}
+
+class _AllExpensesItemListViewState extends State<AllExpensesItemListView> {
+  final List<AllExpensesItemModel> items = const [
     AllExpensesItemModel(
         image: Assets.imagesBalance,
         title: 'Balance',
@@ -23,6 +29,8 @@ class AllExpensesItemListView extends StatelessWidget {
         date: 'April 2022',
         price: r'$20,129'),
   ];
+
+  int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -31,11 +39,27 @@ class AllExpensesItemListView extends StatelessWidget {
         int index = e.key;
         var item = e.value;
         return Expanded(
-            child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
-          child: AllExpensesItem(itemModel: item),
+            child: GestureDetector(
+          onTap: () {
+            updateIdex(index);
+          },
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: index == 1 ? 12 : 0),
+            child: AllExpensesItem(
+              itemModel: item,
+              isSelected: selectedIndex == index,
+            ),
+          ),
         ));
       }).toList(),
     );
+  }
+
+  void updateIdex(int index) {
+    if (selectedIndex != index) {
+      setState(() {
+        selectedIndex = index;
+      });
+    }
   }
 }

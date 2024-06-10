@@ -1,0 +1,103 @@
+import 'package:flutter/material.dart';
+
+import '../../models/AllExpensesItem_model.dart';
+import '../../utils/app_style.dart';
+import 'all_axpenses_item_header.dart';
+
+class InActiveAllExpensesItem extends StatelessWidget {
+  const InActiveAllExpensesItem({
+    super.key,
+    required this.itemModel,
+  });
+
+  final AllExpensesItemModel itemModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      decoration: ShapeDecoration(
+        color: Colors.white,
+        shape: RoundedRectangleBorder(
+          side: const BorderSide(width: 1, color: Color(0xFFF1F1F1)),
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          AllExpensesItemHeader(
+            image: itemModel.image,
+          ),
+          const SizedBox(height: 34),
+          Text(
+            itemModel.title,
+            style: AppStyles.styleSemiBold16(context),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            itemModel.date,
+            style: AppStyles.styleRegular14(context),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            itemModel.price,
+            style: AppStyles.styleSemiBold24(context),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class ActiveAllExpensesItem extends StatelessWidget {
+  const ActiveAllExpensesItem({
+    super.key,
+    required this.itemModel,
+  });
+
+  final AllExpensesItemModel itemModel;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      decoration: ShapeDecoration(
+        color: const Color(0xff4EB7F2),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(12),
+        ),
+      ),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          AllExpensesItemHeader(
+            image: itemModel.image,
+            backgroundColor: Colors.white.withOpacity(0.10000000149011612),
+            imageColor: Colors.white,
+          ),
+          const SizedBox(height: 34),
+          Text(
+            itemModel.title,
+            style: AppStyles.styleSemiBold16(context)
+                .copyWith(color: Colors.white),
+          ),
+          const SizedBox(height: 8),
+          Text(
+            itemModel.date,
+            style: AppStyles.styleRegular14(context)
+                .copyWith(color: const Color(0xffFAFAFA)),
+          ),
+          const SizedBox(height: 12),
+          Text(
+            itemModel.price,
+            style: AppStyles.styleSemiBold24(context)
+                .copyWith(color: Colors.white),
+          ),
+        ],
+      ),
+    );
+  }
+}
