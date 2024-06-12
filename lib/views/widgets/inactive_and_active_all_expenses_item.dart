@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../models/AllExpensesItem_model.dart';
+import '../../models/all_expenses_model.dart';
 import '../../utils/app_style.dart';
 import 'all_axpenses_item_header.dart';
 
