@@ -24,7 +24,7 @@ class MyCard extends StatelessWidget {
           children: [
             ListTile(
               contentPadding:
-                  const EdgeInsets.only(left: 25, right: 30, top: 12),
+                  const EdgeInsets.only(left: 15, right: 25, top: 8),
               title: Text(
                 'Name card',
                 style: AppStyles.styleRegular16(context)
@@ -38,7 +38,7 @@ class MyCard extends StatelessWidget {
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.only(right: 20),
+              padding: const EdgeInsets.only(right: 15),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -52,7 +52,7 @@ class MyCard extends StatelessWidget {
                     style: AppStyles.styleRegular16(context)
                         .copyWith(color: Colors.white),
                   ),
-                  const SizedBox(height: 20),
+                  const SizedBox(height: 10),
                 ],
               ),
             )
