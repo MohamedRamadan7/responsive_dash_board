@@ -18,20 +18,23 @@ class DashboardDesktopLayout extends StatelessWidget {
         Expanded(
             flex: 2,
             child: SingleChildScrollView(
-              child: AllExpensesQuickInvoiceSection(),
+              child: Padding(
+                padding: EdgeInsets.only(top: 40),
+                child: AllExpensesQuickInvoiceSection(),
+              ),
             )),
         SizedBox(width: 15),
         Expanded(
             child: SingleChildScrollView(
-              child: Column(
-                        children: [
+          child: Column(
+            children: [
               SizedBox(height: 40),
               MyCardsAndTransactionHistorySection(),
               SizedBox(height: 24),
               IncomeSection(),
-                        ],
-                      ),
-            ))
+            ],
+          ),
+        ))
       ],
     );
   }

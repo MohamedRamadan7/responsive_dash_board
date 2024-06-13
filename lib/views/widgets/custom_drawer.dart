@@ -1,6 +1,4 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:responsive_dash_board/models/drawer_item_mode.dart';
 import 'package:responsive_dash_board/models/user_info_model.dart';
 
@@ -15,6 +13,7 @@ class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      width: MediaQuery.sizeOf(context).width * .7,
       color: Colors.white,
       child: const CustomScrollView(
         slivers: [
