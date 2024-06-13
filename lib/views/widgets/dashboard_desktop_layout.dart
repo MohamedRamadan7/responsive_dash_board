@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:responsive_dash_board/views/widgets/my_cards_and_transaction_history_section.dart';
 
 import 'all_expenses_quick_invoice_section.dart';
 import 'custom_drawer.dart';
@@ -19,7 +21,15 @@ class DashboardDesktopLayout extends StatelessWidget {
               child: AllExpensesQuickInvoiceSection(),
             )),
         SizedBox(width: 15),
-        Expanded(child: IncomeSection())
+        Expanded(
+            child: Column(
+          children: [
+            SizedBox(height: 40),
+            MyCardsAndTransactionHistorySection(),
+            SizedBox(height: 24),
+            Expanded(child: IncomeSection()),
+          ],
+        ))
       ],
     );
   }

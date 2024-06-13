@@ -12,7 +12,7 @@ class _IncomeShartState extends State<IncomeShart> {
   int isActiveRadius = -1;
   @override
   Widget build(BuildContext context) {
-    return PieChart(getShartData());
+    return AspectRatio(aspectRatio: 1, child: PieChart(getShartData()));
   }
 
   PieChartData getShartData() {
@@ -30,25 +30,25 @@ class _IncomeShartState extends State<IncomeShart> {
           PieChartSectionData(
             value: 40,
             showTitle: false,
-            radius: isActiveRadius == 0 ? 60 : 50,
+            radius: isActiveRadius == 0 ? 35 : 30,
             color: const Color(0xff208CC8),
           ),
           PieChartSectionData(
             value: 25,
             showTitle: false,
-            radius: isActiveRadius == 1 ? 60 : 50,
+            radius: isActiveRadius == 1 ? 35 : 30,
             color: const Color(0xff4EB7F2),
           ),
           PieChartSectionData(
             value: 20,
             showTitle: false,
-            radius: isActiveRadius == 2 ? 60 : 50,
+            radius: isActiveRadius == 2 ? 35 : 30,
             color: const Color(0xff064061),
           ),
           PieChartSectionData(
             value: 15,
             showTitle: false,
-            radius: isActiveRadius == 3 ? 60 : 50,
+            radius: isActiveRadius == 3 ? 35 : 30,
             color: const Color(0xffE2DECD),
           ),
         ]);
