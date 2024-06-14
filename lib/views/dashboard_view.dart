@@ -3,6 +3,7 @@ import 'package:responsive_dash_board/views/widgets/Dashboard_desktop_layout.dar
 import 'package:responsive_dash_board/views/widgets/adaptive_layout.dart';
 import 'package:responsive_dash_board/views/widgets/custom_drawer.dart';
 
+import '../utils/size_config.dart';
 import 'widgets/dashboard_mobile_layout.dart';
 import 'widgets/dashboard_tablet_layout.dart';
 
@@ -14,7 +15,7 @@ class DashboardView extends StatelessWidget {
     final GlobalKey<ScaffoldState> scaffoldKey = GlobalKey();
     return Scaffold(
       key: scaffoldKey,
-      appBar: MediaQuery.sizeOf(context).width < 800
+      appBar: MediaQuery.sizeOf(context).width < SizeConfig.tablet
           ? AppBar(
               elevation: 0,
               leading: IconButton(
@@ -26,8 +27,9 @@ class DashboardView extends StatelessWidget {
             )
           : null,
       backgroundColor: const Color(0xFFF7F9FA),
-      drawer:
-          MediaQuery.sizeOf(context).width < 800 ? const CustomDrawer() : null,
+      drawer: MediaQuery.sizeOf(context).width < SizeConfig.tablet
+          ? const CustomDrawer()
+          : null,
       body: AdaptiveLayout(
           mobilelayout: (context) => const DashboardMobileLayout(),
           tabletLayout: (context) => const DashboardTabletLayout(),
