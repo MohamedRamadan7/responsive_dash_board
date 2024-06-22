@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:responsive_dash_board/utils/app_images.dart';
@@ -24,7 +25,7 @@ class MyCard extends StatelessWidget {
           children: [
             ListTile(
               contentPadding:
-                  const EdgeInsets.only(left: 15, right: 25, top: 8),
+                  const EdgeInsets.only(left: 31, right: 42, top: 16),
               title: Text(
                 'Name card',
                 style: AppStyles.styleRegular16(context)
@@ -38,7 +39,7 @@ class MyCard extends StatelessWidget {
             ),
             const Spacer(),
             Padding(
-              padding: const EdgeInsets.only(right: 15),
+              padding: const EdgeInsets.only(right: 24),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
@@ -52,10 +53,14 @@ class MyCard extends StatelessWidget {
                     style: AppStyles.styleRegular16(context)
                         .copyWith(color: Colors.white),
                   ),
-                  const SizedBox(height: 10),
                 ],
               ),
-            )
+            ),
+            const Flexible(
+              child: SizedBox(
+                height: 36,
+              ),
+            ),
           ],
         ),
       ),
