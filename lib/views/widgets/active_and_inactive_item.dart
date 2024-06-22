@@ -18,9 +18,13 @@ class InActiveDrawerItem extends StatelessWidget {
       leading: SvgPicture.asset(
         drawerItemModel.image,
       ),
-      title: Text(
-        drawerItemModel.title,
-        style: AppStyles.styleRegular12(context),
+      title: FittedBox(
+        alignment: AlignmentDirectional.centerStart,
+        fit: BoxFit.scaleDown,
+        child: Text(
+          drawerItemModel.title,
+          style: AppStyles.styleRegular12(context),
+        ),
       ),
     );
   }
@@ -40,9 +44,13 @@ class ActiveDrawerItem extends StatelessWidget {
       leading: SvgPicture.asset(
         drawerItemModel.image,
       ),
-      title: Text(
-        drawerItemModel.title,
-        style: AppStyles.styleBold16(context),
+      title: FittedBox(
+        alignment: AlignmentDirectional.centerStart,
+        fit: BoxFit.scaleDown,
+        child: Text(
+          drawerItemModel.title,
+          style: AppStyles.styleBold16(context),
+        ),
       ),
       trailing: Container(
         width: 3.27,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../utils/size_config.dart';
+import 'details_income_shart.dart';
 import 'income_chart.dart';
 import 'income_details.dart';
 
@@ -16,7 +17,7 @@ class IncomeSectionBody extends StatelessWidget {
         ? const Expanded(
             child: Padding(
             padding: EdgeInsets.all(20.0),
-            child: IncomeShart(),
+            child: DetailsIncomeShart(),
           ))
         : const Row(
             children: [
