@@ -19,12 +19,12 @@ class TransactionHistoryListView extends StatelessWidget {
       price: r'$20,129',
       isWithdrawal: false,
     ),
-    TransactionModel(
-      title: 'Juni Mobile App project',
-      date: '13 Apr, 2022 ',
-      price: r'$20,129',
-      isWithdrawal: false,
-    ),
+    // TransactionModel(
+    //   title: 'Juni Mobile App project',
+    //   date: '13 Apr, 2022 ',
+    //   price: r'$20,129',
+    //   isWithdrawal: false,
+    // ),
   ];
   @override
   Widget build(BuildContext context) {
